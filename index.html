@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#ffffff"><title>Seungmin Lee | Applied & Computational Mathematics</title><meta name="description" content="Seungmin Lee, Ph.D. student in mathematics at Florida State University. Research in numerical PDEs, porous media flow, and data assimilation."><link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMyIgZmlsbD0iIzc0M2U0MCIvPjx0ZXh0IHg9IjEwIiB5PSIyOSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMzIiIGZpbGw9IiNmOGY3ZjMiPnMuPC90ZXh0Pjwvc3ZnPgo=" type="image/svg+xml">
+<!-- STYLES: edit the CSS below to change appearance. -->
+<style>
+:root { --ink:#222; --muted:#666; --line:#ddd; --accent:#174d83; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:90px; }
+body { margin:0; background:white; color:var(--ink); font:16px/1.65 Arial,Helvetica,sans-serif; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+button,input { font:inherit; }
+button { cursor:pointer; }
+a:focus-visible,button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.wrap { max-width:1024px; margin:auto; padding:0 32px; }
+.site-header { background:white; border-bottom:1px solid var(--line); }
+.header-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+.brand { color:var(--ink); font-size:18px; font-weight:600; white-space:nowrap; }
+nav { display:flex; gap:20px; align-items:center; }
+nav a { font-size:14px; }
+nav a.active { text-decoration:underline; }
+.profile-link { font-size:13px; white-space:nowrap; }
+.menu-toggle { display:none; border:1px solid var(--line); background:white; padding:3px 10px; }
+.hero { padding:48px 0 36px; border-bottom:1px solid var(--line); }
+.affiliation { color:var(--muted); font-size:14px; }
+h1 { font-size:38px; line-height:1.2; margin:16px 0 8px; }
+.role { font-size:18px; }
+.hero-description { max-width:760px; margin:18px 0 0; }
+.section { padding:32px 0; border-bottom:1px solid var(--line); }
+.section-head { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-bottom:20px; }
+h2 { font-size:24px; line-height:1.35; margin:0 0 18px; }
+.section-head h2 { margin:0; }
+h3 { font-size:17px; line-height:1.5; margin:0 0 8px; }
+.research-grid { display:grid; gap:24px; }
+.research-item p { margin:0 0 8px; }
+.research-detail { border:0; background:none; color:var(--accent); padding:0; font-size:14px; }
+.research-detail:hover { text-decoration:underline; }
+.research-expanded { display:none; padding-top:12px; color:#555; }
+.research-expanded.open { display:block; }
+.filters { display:flex; gap:8px; }
+.filter { border:1px solid var(--line); background:white; border-radius:2px; padding:4px 10px; font-size:13px; color:#444; }
+.filter[aria-pressed=true] { background:#eee; border-color:#888; color:#222; }
+.pub { display:grid; grid-template-columns:70px 1fr; gap:14px; padding:24px 0; border-top:1px solid var(--line); }
+.pub[hidden] { display:none; }
+.pub-year { color:var(--muted); font-size:14px; }
+.pub-status { font-size:13px; color:var(--muted); margin-bottom:7px; }
+.pub h3 { font-size:17px; }
+.authors,.venue { font-size:14px; margin:4px 0; }
+.authors strong { font-weight:600; }
+.venue { color:#555; }
+.pub-actions { display:flex; align-items:center; gap:16px; margin-top:12px; }
+.pub-actions a,.pub-actions button { font-size:14px; }
+.pub-actions button { color:var(--accent); border:0; background:none; padding:0; }
+.pub-actions button:hover { text-decoration:underline; }
+.pub-actions .sep { height:12px; width:1px; background:var(--line); }
+.pub details { margin-top:12px; }
+.pub details summary { font-size:14px; cursor:pointer; }
+.abstract { margin:12px 0 0; font-size:14px; color:#555; }
+.two-columns { display:grid; gap:32px; }
+.news-item { display:grid; grid-template-columns:90px 1fr; gap:16px; margin:16px 0; }
+.news-item time { font-size:13px; color:var(--muted); padding-top:2px; }
+.news-item p { margin:0; }
+.news-item strong { font-weight:400; }
+.teaching-copy { margin:0 0 16px; }
+.teaching-row { display:flex; gap:30px; margin-bottom:12px; }
+.teaching-row span:last-child { color:var(--muted); }
+.small-link { font-size:14px; }
+.about-text p { margin:0 0 16px; }
+.about-meta { display:flex; gap:50px; margin-top:22px; font-size:14px; }
+.about-meta span { display:block; color:var(--muted); }
+.contact { padding:32px 0; }
+.contact p { margin:0; }
+.contact-right .text-link { display:inline-block; margin-top:12px; }
+footer { display:flex; justify-content:space-between; gap:20px; padding:20px 0; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+.button { display:inline-block; border:1px solid #888; border-radius:2px; background:#f5f5f5; color:#222; padding:7px 12px; font-size:14px; }
+.button:hover { background:#e8e8e8; }
+dialog { width:min(650px,90vw); border:1px solid #aaa; background:white; color:var(--ink); padding:26px; }
+dialog::backdrop { background:#0006; }
+dialog pre { white-space:pre-wrap; overflow-wrap:anywhere; background:#f5f5f5; padding:15px; font-size:12px; line-height:1.7; }
+.dialog-actions { display:flex; gap:12px; justify-content:end; }
+.toast[hidden] { display:none; }
+.profile-page { max-width:850px; margin:45px auto; padding:0 30px; }
+.profile-page .eyebrow { font-size:14px; color:var(--muted); }
+.profile-page h2 { margin:30px 0 16px; border-bottom:1px solid var(--line); padding-bottom:8px; }
+.profile-page p,.profile-page li { font-size:15px; }
+.profile-page .profile-note { font-size:13px; color:var(--muted); }
+.print-actions { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.skip-link { position:absolute; top:-60px; left:20px; padding:8px; background:white; }
+.skip-link:focus { top:10px; }
+@media(max-width:850px) {
+ .wrap { padding:0 24px; }
+ .header-inner { flex-wrap:wrap; padding-top:16px; padding-bottom:16px; gap:14px; }
+ nav { gap:16px; }
+ .profile-link { display:none; }
+}
+@media(max-width:600px) {
+ .wrap { padding:0 20px; }
+ .header-inner { min-height:64px; }
+ .menu-toggle { display:block; }
+ nav { display:none; flex-basis:100%; flex-wrap:wrap; padding-top:8px; }
+ nav.open { display:flex; }
+ .hero { padding:30px 0; }
+ h1 { font-size:32px; }
+ .affiliation { font-size:13px; }
+ .section-head { flex-direction:column; align-items:start; gap:15px; }
+ .pub { grid-template-columns:1fr; gap:8px; }
+ .news-item { grid-template-columns:75px 1fr; gap:10px; }
+ .about-meta { flex-direction:column; gap:12px; }
+ .teaching-row { flex-direction:column; gap:2px; }
+ footer { flex-direction:column; gap:8px; }
+ .profile-page { margin-top:25px; padding:0 20px; }
+}
+@media print {
+ .print-actions,.site-header,.skip-link,dialog { display:none!important; }
+ .profile-page { margin:0; padding:0; max-width:none; }
+ .profile-page h1 { font-size:30px; }
+ .profile-page h2 { font-size:20px; }
+ .profile-page p,.profile-page li { font-size:11px; }
+ a { color:black; }
+}
+
+/* Standalone academic profile */
+#profile-dialog { width:min(850px,94vw); max-height:90vh; overflow:auto; }
+#profile-dialog .profile-page { padding:0; margin:0; }
+.profile-actions { display:flex; align-items:center; justify-content:space-between; gap:15px; }
+#profile-open { border:0; background:none; color:var(--accent); padding:0; cursor:pointer; font:inherit; font-size:13px; }
+#profile-open:hover { text-decoration:underline; }
+@media print {
+ body.printing-profile > :not(#profile-dialog) { display:none!important; }
+ body.printing-profile #profile-dialog { display:block!important; position:static; width:100%; max-width:none; max-height:none; overflow:visible; padding:0; margin:0; border:0; }
+ body.printing-profile .profile-actions { display:none!important; }
+}
+
+</style></head>
+<body>
+<!-- Standalone website. Open this file in a browser, or upload it as index.html to a static web host. -->
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="#home" aria-label="Seungmin Lee home">Seungmin Lee</a><nav id="navigation" aria-label="Main navigation"><a href="#about">About</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a></nav><button class="profile-link" id="profile-open" aria-haspopup="dialog">Academic profile</button><button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navigation">☰</button></div></header>
+<!-- CONTENT: edit your research, publications, teaching, and contact information below. -->
+<main id="main" class="wrap">
+<section class="hero" id="home" aria-labelledby="hero-title"><div><div class="affiliation">Department of Mathematics · Florida State University</div><h1 id="hero-title">Seungmin Lee</h1><div class="role">Ph.D. student in Mathematics</div><p class="hero-description">My research focuses on numerical methods for partial differential equations, porous media flow, and data assimilation.</p></div></section>
+
+<!-- RESEARCH -->
+<section class="section" id="research" aria-labelledby="research-title"><div class="section-head"><div><h2 id="research-title">Research</h2></div></div><div class="research-grid">
+<article class="research-item"><h3>Property-preserving numerical methods</h3><p>Discontinuous Galerkin methods and optimization-based limiters for two-phase flow, with an emphasis on physical bounds and non-matching meshes.</p><button class="research-detail" aria-expanded="false" aria-controls="research-more-1">Research details <span aria-hidden="true">+</span></button><p class="research-expanded" id="research-more-1">I study how cell-average corrections and slope limiting can control nonphysical oscillations while retaining accuracy in heterogeneous porous media. Current work considers the challenges introduced by local mesh refinement and discontinuous material coefficients.</p></article>
+<article class="research-item"><h3>Porous media flow and poromechanics</h3><p>Finite element discretizations and splitting algorithms for coupled flow and deformation, including Biot’s poroelasticity and two-phase flow models.</p><button class="research-detail" aria-expanded="false" aria-controls="research-more-2">Research details <span aria-hidden="true">+</span></button><p class="research-expanded" id="research-more-2">My interests include efficient coupling strategies for pressure, saturation, and displacement. I am exploring compressible two-phase poromechanics, motivated by subsurface energy storage and flow in fractured media.</p></article>
+<article class="research-item"><h3>Data assimilation for PDE models</h3><p>Combining sparse observations with mathematical models to improve state estimates, with analysis and simulations for poroelastic systems.</p><button class="research-detail" aria-expanded="false" aria-controls="research-more-3">Research details <span aria-hidden="true">+</span></button><p class="research-expanded" id="research-more-3">My published work studies continuous data assimilation for Biot’s system. An emerging direction is the use of ensemble filtering for state and parameter estimation in two-phase flow and coupled poromechanics.</p></article>
+</div></section>
+<!-- PUBLICATIONS -->
+<section class="section" id="publications" aria-labelledby="publications-title"><div class="section-head"><div><h2 id="publications-title">Publications</h2></div><div class="filters" role="group" aria-label="Filter publications"><button class="filter" data-filter="all" aria-pressed="true">All work</button><button class="filter" data-filter="published" aria-pressed="false">Published</button><button class="filter" data-filter="ongoing" aria-pressed="false">Ongoing</button></div></div>
+<article class="pub" data-status="published"><div class="pub-year">2026</div><div><div class="pub-status">Journal article</div><h3>Convergence and numerical simulations of the continuous data assimilation for Biot’s poroelasticity system</h3><p class="authors"><strong>Seungmin Lee</strong> and Sanghyun Lee</p><p class="venue">Computers & Mathematics with Applications, 202, 20–37 (2026)</p><div class="pub-actions"><a href="https://doi.org/10.1016/j.camwa.2025.11.008" target="_blank" rel="noopener">Journal article ↗</a><span class="sep"></span><button id="bibtex-open">BibTeX ↗</button></div><details><summary>Research overview</summary><p class="abstract">We study continuous data assimilation for Biot’s poroelasticity system, using sparse observations to improve pressure and displacement estimates. The work combines convergence analysis with finite element simulations and a fixed-stress splitting method.</p></details></div></article>
+<article class="pub" data-status="ongoing"><div class="pub-year">Ongoing</div><div><div class="pub-status">Collaborative research</div><h3>An optimization-based property-preserving limiter for two-phase flow in porous media on non-matching meshes</h3><p class="authors"><strong>Seungmin Lee</strong>, with Sanghyun Lee and Chen Liu</p><p class="venue">Research manuscript</p><div class="pub-actions"><a href="https://www.math.fsu.edu/~lee/publications.html" target="_blank" rel="noopener">Research group listing ↗</a></div><details><summary>Research overview</summary><p class="abstract">An optimization-based approach to correcting cell averages in two-phase flow simulations, coupled with slope limiting to control oscillations. The study focuses on heterogeneous media and non-matching meshes.</p></details></div></article>
+</section>
+<section class="section two-columns"><div id="updates"><h2>News</h2><div class="news-item"><time datetime="2026-09">SEP 2026</time><p>Presented research at the <strong>FSU Applied & Computational Mathematics Seminar.</strong></p></div><div class="news-item"><time datetime="2026-04">APR 2026</time><p>Presented at the <strong>Southeast ACM Student Workshop.</strong></p></div><div class="news-item"><time datetime="2026-01">JAN 2026</time><p>Our paper on <strong>continuous data assimilation for Biot’s system</strong> appeared in Computers & Mathematics with Applications.</p></div></div><div id="teaching"><h2>Teaching</h2><p class="teaching-copy">I teach calculus at Florida State University.</p><div class="teaching-row"><span>Calculus</span><span>Course instructor · FSU</span></div><a class="small-link" href="https://www.math.fsu.edu/" target="_blank" rel="noopener">Department of Mathematics ↗</a></div></section>
+<section class="section about-grid" id="about"><div><h2>About</h2></div><div class="about-text"><p>I am a Ph.D. student in Mathematics at Florida State University, working in applied and computational mathematics with <a href="https://www.math.fsu.edu/~lee/" target="_blank" rel="noopener">Dr. Sanghyun Lee</a>.</p><p>I study finite element methods for porous media flow and coupled flow–deformation systems.</p><div class="about-meta"><div><span>Affiliation</span>Florida State University</div><div><span>Research tools</span>C++ · deal.II · Scientific computing</div></div></div></section>
+<section class="contact" id="contact"><div><h2>Contact</h2></div><div class="contact-right"><p>Department of Mathematics<br>Florida State University<br>Tallahassee, Florida, USA</p><a class="text-link" href="https://www.math.fsu.edu/~lee/projects.html" target="_blank" rel="noopener">FSU research group <span aria-hidden="true">↗</span></a></div></section>
+</main><div class="wrap"><footer><span>© 2026 Seungmin Lee</span><span>Applied & computational mathematics <span aria-hidden="true">·</span> <a href="#home">Back to top ↑</a></span></footer></div>
+<dialog id="bibtex-dialog" aria-labelledby="bibtex-title"><h2 id="bibtex-title">Cite this work</h2><pre id="bibtex-text"></pre><div class="dialog-actions"><button class="button close-dialog">Close</button><button class="button" id="copy-bibtex">Copy BibTeX</button></div></dialog><div class="toast" role="status" hidden></div>
+<dialog id="profile-dialog" aria-labelledby="profile-title">
+ <div class="profile-actions"><button class="button" id="profile-close">Close</button><button class="button" id="profile-print">Print / save as PDF</button></div>
+ <div class="profile-page"><div class="eyebrow" style="margin-top:50px">Academic profile</div><h1 id="profile-title">Seungmin Lee</h1><p>Ph.D. student in Mathematics<br>Department of Mathematics, Florida State University<br>Tallahassee, Florida, USA</p><p class="profile-note">A concise research and teaching profile · Updated October 2026</p><h2>Research interests</h2><p>Numerical analysis of partial differential equations; finite element and discontinuous Galerkin methods; property-preserving limiters; two-phase flow in porous media; Biot’s poroelasticity; continuous data assimilation and state estimation.</p><h2>Current affiliation</h2><p><strong>Florida State University</strong><br>Ph.D. student, Mathematics<br>Research advisor: Sanghyun Lee</p><h2>Publications & ongoing work</h2><p>Seungmin Lee and Sanghyun Lee. “Convergence and numerical simulations of the continuous data assimilation for Biot’s poroelasticity system.” <em>Computers & Mathematics with Applications</em>, 202, 20–37, 2026.<br><a href="https://doi.org/10.1016/j.camwa.2025.11.008">doi:10.1016/j.camwa.2025.11.008</a></p><p>With Sanghyun Lee and Chen Liu. “An optimization-based property-preserving limiter for two-phase flow in porous media on non-matching meshes.” Research manuscript.</p><h2>Selected presentations</h2><ul><li>FSU Applied & Computational Mathematics Seminar, September 2026.</li><li>Southeast ACM Student Workshop, April 2026.</li></ul><h2>Teaching</h2><p>Calculus course instructor, Florida State University.</p><h2>Computational experience</h2><p>C++; deal.II finite element library; finite element and discontinuous Galerkin discretizations; fixed-stress and IMPES splitting methods; scientific visualization.</p><h2>Academic links</h2><p><a href="https://www.math.fsu.edu/~lee/projects.html">FSU research group</a> · <a href="https://www.math.fsu.edu/">FSU Department of Mathematics</a></p></div>
+</dialog>
+
+<!-- BEHAVIOR: all JavaScript is included here; no installation or server is required. -->
+<script>
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('#navigation');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close menu':'Open menu');toggle.textContent=open?'×':'☰';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');toggle.textContent='☰';}));
+document.querySelectorAll('.research-detail').forEach(button=>button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));document.getElementById(button.getAttribute('aria-controls')).classList.toggle('open',open);button.querySelector('span').textContent=open?'−':'+';}));
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('.pub').forEach(p=>p.hidden=button.dataset.filter!=='all'&&p.dataset.status!==button.dataset.filter);}));
+const bibtex=`@article{LeeLee2026Biot,
+  author = {Lee, Seungmin and Lee, Sanghyun},
+  title = {Convergence and numerical simulations of the continuous data assimilation for {Biot}'s poroelasticity system},
+  journal = {Computers & Mathematics with Applications},
+  volume = {202},
+  pages = {20--37},
+  year = {2026},
+  doi = {10.1016/j.camwa.2025.11.008}
+}`;
+document.querySelector('#bibtex-text').textContent=bibtex;
+const dialog=document.querySelector('#bibtex-dialog');
+document.querySelector('#bibtex-open').addEventListener('click',()=>dialog.showModal());
+document.querySelector('.close-dialog').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+document.querySelector('#copy-bibtex').addEventListener('click',async()=>{const button=document.querySelector('#copy-bibtex');try{await navigator.clipboard.writeText(bibtex);button.textContent='Copied!';setTimeout(()=>button.textContent='Copy BibTeX',1800);}catch{const range=document.createRange();range.selectNodeContents(document.querySelector('#bibtex-text'));getSelection().removeAllRanges();getSelection().addRange(range);button.textContent='Select text to copy';}});
+const links=[...nav.querySelectorAll('a')];
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(a=>{const active=a.getAttribute('href')==='#'+entry.target.id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -65% 0px',threshold:0});links.forEach(a=>{const section=document.querySelector(a.getAttribute('href'));if(section)observer.observe(section);});}
+
+// Academic profile: kept in this file so no separate page is needed.
+const profileDialog = document.querySelector('#profile-dialog');
+document.querySelector('#profile-open').addEventListener('click', () => profileDialog.showModal());
+document.querySelector('#profile-close').addEventListener('click', () => profileDialog.close());
+document.querySelector('#profile-print').addEventListener('click', () => {
+ document.body.classList.add('printing-profile');
+ window.print();
+});
+window.addEventListener('afterprint', () => document.body.classList.remove('printing-profile'));
+profileDialog.addEventListener('close', () => document.body.classList.remove('printing-profile'));
+
+</script>
+</body></html>
