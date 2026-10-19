@@ -28,8 +28,6 @@
     .intro { padding:42px 0 34px; border-bottom:1px solid var(--line); }
     .role { font-size:18px; margin:0 0 4px; }
     .affiliation,.muted { color:var(--muted); }
-    .intro-description { max-width:780px; margin-top:18px; }
-    .intro-links { display:flex; gap:22px; flex-wrap:wrap; font-size:14px; margin-top:18px; }
     section.content-section { padding:32px 0; border-bottom:1px solid var(--line); }
     .research-list { padding-left:22px; margin:0; }
     .research-list li { margin:10px 0; }
@@ -50,21 +48,7 @@
     summary { cursor:pointer; color:var(--link); }
     pre { padding:14px; overflow-wrap:anywhere; white-space:pre-wrap; background:#f5f5f5; font:12px/1.7 monospace; }
     .copy-citation { border:1px solid #bbb; padding:4px 10px; background:white; font:13px Arial,Helvetica,sans-serif; cursor:pointer; }
-    .entry { margin:18px 0; }
-    .entry-header { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-    .entry-header strong { font-weight:600; }
-    .entry p { margin:3px 0; }
-    .date { color:var(--muted); font-size:14px; }
     .small { font-size:14px; }
-    .table-scroll { overflow-x:auto; }
-    table { border-collapse:collapse; width:100%; font-size:14px; }
-    th,td { text-align:left; vertical-align:top; padding:9px 12px 9px 0; border-bottom:1px solid #eee; }
-    th { font-weight:600; }
-    th:last-child,td:last-child { padding-right:0; }
-    .events { padding-left:20px; margin:0; }
-    .events li { margin:16px 0; }
-    .events span { display:block; color:var(--muted); font-size:14px; }
-    .cv-links { display:flex; flex-wrap:wrap; gap:22px; margin-bottom:10px; }
     footer { display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; padding:22px 0; color:var(--muted); font-size:12px; }
     .skip-link { position:absolute; top:-60px; left:20px; padding:8px; background:white; }
     .skip-link:focus { top:10px; }
@@ -77,9 +61,6 @@
       h1 { font-size:32px; }
       h2 { font-size:23px; }
       .intro { padding:30px 0; }
-      .entry-header { display:block; }
-      .entry-header .date { display:block; margin-top:3px; }
-      table { min-width:540px; }
     }
     @media print {
       header,.skip-link,.filters,.copy-citation,footer { display:none!important; }
@@ -101,11 +82,9 @@
     <a class="brand" href="#home">Seungmin Lee</a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navigation">Menu</button>
     <nav id="navigation" aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
+      <a href="#research">Research interests</a>
       <a href="#publications">Publications</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#cv">CV</a>
+      <a href="LEE_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -116,49 +95,17 @@
     <h1 id="name">Seungmin Lee</h1>
     <p class="role">Ph.D. student in Applied and Computational Mathematics</p>
     <p class="affiliation">Department of Mathematics, Florida State University</p>
-    <p class="intro-description">My research focuses on numerical methods for partial differential equations, porous media flow, poromechanics, and data assimilation.</p>
-    <div class="intro-links">
-      <a href="mailto:sl22b@fsu.edu">sl22b@fsu.edu</a>
-      <a href="LEE_CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
-      <a href="LEE_CV.pdf" download>Download CV</a>
-    </div>
   </section>
 
-  <!-- ABOUT AND EDUCATION -->
-  <section class="content-section" id="about" aria-labelledby="about-heading">
-    <h2 id="about-heading">About</h2>
-    <p>I am a Ph.D. student in Applied and Computational Mathematics at Florida State University, where I work with <a href="https://www.math.fsu.edu/~lee/" target="_blank" rel="noopener">Dr. Sanghyun Lee</a>. I study finite element methods, property-preserving numerical schemes, and data assimilation for flow and coupled flow-deformation systems.</p>
-    <h3>Education</h3>
-    <div class="entry">
-      <div class="entry-header"><strong>Ph.D., Applied and Computational Mathematics</strong><span class="date">August 2022 - present</span></div>
-      <p>Florida State University, Tallahassee, Florida, USA</p>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><strong>M.S., Mathematics</strong><span class="date">March 2020 - February 2022</span></div>
-      <p>Dongguk University, Seoul, South Korea</p>
-      <p class="small">Thesis: <em>Neural Network in Solving Ordinary Differential Equations</em></p>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><strong>B.S., Mathematics</strong><span class="date">March 2016 - February 2020</span></div>
-      <p>Dongguk University, Seoul, South Korea</p>
-    </div>
-  </section>
 
   <!-- RESEARCH: descriptions summarize the work listed in the CV. -->
   <section class="content-section" id="research" aria-labelledby="research-heading">
-    <h2 id="research-heading">Research</h2>
+    <h2 id="research-heading">Research interests</h2>
     <ul class="research-list">
       <li><strong>Property-preserving numerical methods.</strong> Optimization-based cell-average limiters and discontinuous Galerkin methods for two-phase flow on non-matching meshes; metric projection formulations and convergence analysis for convection-diffusion equations.</li>
       <li><strong>Porous media flow and poromechanics.</strong> Finite element methods for Biot's poroelasticity and two-phase flow in heterogeneous porous media.</li>
       <li><strong>Data assimilation.</strong> Continuous data assimilation for Biot's system and ensemble score filtering for state estimation in two-phase flow models with rare earth materials.</li>
     </ul>
-    <h3>Research experience</h3>
-    <div class="entry">
-      <div class="entry-header"><strong>Research Assistant, Florida State University</strong><span class="date">Fall 2026; Spring 2025</span></div>
-    </div>
-    <div class="entry">
-      <div class="entry-header"><strong>Intern, Lawrence Livermore National Laboratory (LLNL)</strong><span class="date">June 3 - July 13, 2024</span></div>
-    </div>
   </section>
 
   <!-- PUBLICATIONS: preserve author order and update status as manuscripts progress. -->
@@ -211,57 +158,8 @@
     </article>
   </section>
 
-  <!-- TEACHING: add new courses and terms here. -->
-  <section class="content-section" id="teaching" aria-labelledby="teaching-heading">
-    <h2 id="teaching-heading">Teaching</h2>
-    <h3>Florida State University</h3>
-    <p>Course instructor for Calculus I and II; teaching assistant for undergraduate mathematics courses.</p>
-    <div class="table-scroll" role="region" aria-label="Florida State University teaching history" tabindex="0">
-      <table>
-        <thead><tr><th scope="col">Course</th><th scope="col">Role</th><th scope="col">Term(s)</th></tr></thead>
-        <tbody>
-          <tr><td>Calculus II</td><td>Course instructor</td><td>Spring 2026</td></tr>
-          <tr><td>Calculus I</td><td>Course instructor</td><td>Fall 2025</td></tr>
-          <tr><td>Discrete Mathematics II</td><td>Recitation TA</td><td>Fall 2024</td></tr>
-          <tr><td>Calculus I</td><td>Recitation TA</td><td>Spring 2024</td></tr>
-          <tr><td>College Algebra</td><td>Lab TA</td><td>Fall 2022, Spring 2023, Fall 2023</td></tr>
-          <tr><td>Liberal Arts Mathematics</td><td>Lab TA</td><td>Fall 2023</td></tr>
-          <tr><td>Analytic Trigonometry</td><td>Lecture TA</td><td>Summer 2023</td></tr>
-          <tr><td>Business Calculus</td><td>Lab TA</td><td>Fall 2022, Spring 2023</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <h3>Dongguk University</h3>
-    <div class="table-scroll" role="region" aria-label="Dongguk University grading history" tabindex="0">
-      <table>
-        <thead><tr><th scope="col">Course</th><th scope="col">Role</th><th scope="col">Period</th></tr></thead>
-        <tbody>
-          <tr><td>Modern Algebra</td><td>Grading assistant</td><td>March - June 2021</td></tr>
-          <tr><td>Cryptography</td><td>Grading assistant</td><td>September - December 2020</td></tr>
-          <tr><td>Calculus I and II</td><td>Grading assistant</td><td>March 2018 - December 2019</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
 
-  <!-- CONFERENCES: attendance/presentation roles are not inferred from the CV. -->
-  <section class="content-section" id="conferences" aria-labelledby="conferences-heading">
-    <h2 id="conferences-heading">Conferences, workshops, and seminars</h2>
-    <ul class="events">
-      <li><strong>Applied and Computational Math Seminar, Fall 2026</strong><span>Florida State University, Tallahassee, Florida, USA - September 8, 2026</span></li>
-      <li><strong>2026 Southeast Applied and Computational Math Student Workshop</strong><span>Emory University, Atlanta, Georgia, USA - April 3-4, 2026</span></li>
-      <li><strong>M3L Team All-Hands Meeting</strong><span>The University of Texas at El Paso, El Paso, Texas, USA - May 15-17, 2025</span></li>
-      <li><strong>2025 Southeast Applied and Computational Math Student Workshop</strong><span>Auburn University, Auburn, Alabama, USA - April 4-6, 2025</span></li>
-      <li><strong>11th deal.II Users and Developers Workshop</strong><span>Colorado State University, Fort Collins, Colorado, USA - August 12-16, 2024</span></li>
-    </ul>
-  </section>
 
-  <!-- CV: keep LEE_CV.pdf in the same repository folder as this index.html. -->
-  <section class="content-section" id="cv" aria-labelledby="cv-heading">
-    <h2 id="cv-heading">Curriculum vitae</h2>
-    <div class="cv-links"><a href="LEE_CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a><a href="LEE_CV.pdf" download>Download CV</a></div>
-    <p class="small muted">Updated October 2026.</p>
-  </section>
 
   <!-- CONTACT -->
   <section class="content-section" id="contact" aria-labelledby="contact-heading">
@@ -314,3 +212,4 @@
 </script>
 </body>
 </html>
+
