@@ -3,46 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Seungmin Lee. Research interests in numerical methods, porous media flow, poromechanics, and data assimilation. Publications, CV, and contact information.">
+  <meta name="description" content="Seungmin Lee, Ph.D. student in Applied and Computational Mathematics at Florida State University. Numerical PDEs, porous media flow, poromechanics, and data assimilation.">
   <meta name="author" content="Seungmin Lee">
   <title>Seungmin Lee | Applied and Computational Mathematics</title>
   <style>
-    :root { color-scheme:light; --ink:#222; --muted:#666; --line:#ddd; --link:#174d83; }
-    * { box-sizing:border-box; }
+    /* APPEARANCE: standard fonts and a simple academic layout. */
+    :root { color-scheme: light; --ink:#222; --muted:#666; --line:#ddd; --link:#174d83; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
     body { margin:0; color:var(--ink); background:white; font:16px/1.65 Arial,Helvetica,sans-serif; }
     a { color:var(--link); text-decoration:none; }
     a:hover { text-decoration:underline; }
-    a:focus-visible,summary:focus-visible { outline:2px solid var(--link); outline-offset:4px; }
-    .wrap { max-width:960px; padding:0 32px; margin:auto; }
-    h1 { font-size:34px; line-height:1.2; margin:0 0 10px; }
-    h2 { font-size:23px; line-height:1.35; margin:0 0 18px; }
-    h3 { font-size:17px; line-height:1.5; margin:0 0 8px; }
+    a:focus-visible,button:focus-visible,summary:focus-visible { outline:2px solid var(--link); outline-offset:4px; }
+    .wrap { max-width:1024px; padding:0 32px; margin:auto; }
+    header { border-bottom:1px solid var(--line); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; min-height:76px; padding-top:16px; padding-bottom:16px; }
+    .brand { color:var(--ink); font-size:18px; font-weight:600; }
+    nav { display:flex; align-items:center; flex-wrap:wrap; gap:18px; font-size:14px; }
+    .menu-toggle { display:none; border:1px solid var(--line); background:white; padding:4px 10px; font:inherit; cursor:pointer; }
+    h1 { font-size:38px; line-height:1.2; margin:0 0 10px; }
+    h2 { font-size:24px; line-height:1.35; margin:0 0 18px; }
+    h3 { font-size:17px; line-height:1.5; margin:22px 0 8px; }
     p { margin:0 0 14px; }
-    .intro { padding:40px 0 28px; border-bottom:1px solid var(--line); }
-    .cv-link { font-size:15px; }
-    section.content-section { padding:28px 0; border-bottom:1px solid var(--line); }
-    section.content-section:last-child { border-bottom:0; padding-bottom:40px; }
+    .intro { padding:42px 0 34px; border-bottom:1px solid var(--line); }
+    .role { font-size:18px; margin:0 0 4px; }
+    .affiliation,.muted { color:var(--muted); }
+    section.content-section { padding:32px 0; border-bottom:1px solid var(--line); }
     .research-list { padding-left:22px; margin:0; }
     .research-list li { margin:10px 0; }
     .research-list strong { font-weight:600; }
-    .paper { padding:20px 0; border-top:1px solid var(--line); }
+    .section-heading { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:18px; flex-wrap:wrap; }
+    .section-heading h2 { margin:0; }
+    .filters { display:flex; gap:6px; flex-wrap:wrap; }
+    .filters button { border:1px solid var(--line); background:white; padding:4px 9px; font:13px Arial,Helvetica,sans-serif; cursor:pointer; border-radius:2px; }
+    .filters button[aria-pressed="true"] { background:#eee; border-color:#888; }
+    .paper { padding:22px 0; border-top:1px solid var(--line); }
+    .paper[hidden] { display:none; }
     .paper-status { color:var(--muted); font-size:13px; margin:0 0 7px; }
+    .paper h3 { margin:0 0 8px; }
     .authors,.venue { margin:4px 0; font-size:14px; }
     .venue { color:#555; }
-    .paper-links { margin-top:10px; font-size:14px; }
+    .paper-links { display:flex; gap:18px; margin-top:10px; font-size:14px; }
     details { margin-top:12px; font-size:14px; }
     summary { cursor:pointer; color:var(--link); }
     pre { padding:14px; overflow-wrap:anywhere; white-space:pre-wrap; background:#f5f5f5; font:12px/1.7 monospace; }
+    .copy-citation { border:1px solid #bbb; padding:4px 10px; background:white; font:13px Arial,Helvetica,sans-serif; cursor:pointer; }
+    .small { font-size:14px; }
+    footer { display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; padding:22px 0; color:var(--muted); font-size:12px; }
     .skip-link { position:absolute; top:-60px; left:20px; padding:8px; background:white; }
     .skip-link:focus { top:10px; }
-    @media(max-width:600px) {
+    @media(max-width:700px) {
       .wrap { padding-left:22px; padding-right:22px; }
-      h1 { font-size:30px; }
-      h2 { font-size:22px; }
-      .intro { padding:30px 0 24px; }
+      .header-inner { min-height:64px; }
+      .menu-toggle { display:block; }
+      nav { display:none; flex-basis:100%; padding-top:8px; gap:14px; }
+      nav.open { display:flex; }
+      h1 { font-size:32px; }
+      h2 { font-size:23px; }
+      .intro { padding:30px 0; }
     }
     @media print {
-      .skip-link { display:none; }
+      header,.skip-link,.filters,.copy-citation,footer { display:none!important; }
       .wrap { max-width:none; padding:0; }
       body { font-size:11px; }
       h1 { font-size:26px; }
@@ -56,11 +77,24 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#home">Seungmin Lee</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#research">Research interests</a>
+      <a href="#publications">Publications</a>
+      <a href="LEE_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 <main id="main" class="wrap">
-  <!-- NAME AND CV LINK -->
+  <!-- INTRODUCTION: update position and affiliation here. -->
   <section class="intro" id="home" aria-labelledby="name">
     <h1 id="name">Seungmin Lee</h1>
-    <a class="cv-link" href="LEE_CV.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+    <p class="role">Ph.D. student in Applied and Computational Mathematics</p>
+    <p class="affiliation">Department of Mathematics, Florida State University</p>
   </section>
 
 
@@ -77,7 +111,13 @@
   <!-- PUBLICATIONS: preserve author order and update status as manuscripts progress. -->
   <section class="content-section" id="publications" aria-labelledby="publications-heading">
     <div class="section-heading">
-      <h2 id="publications-heading">Publications</h2>
+      <h2 id="publications-heading">Publications and manuscripts</h2>
+      <div class="filters" role="group" aria-label="Filter publications">
+        <button data-filter="all" aria-pressed="true">All</button>
+        <button data-filter="published" aria-pressed="false">Published</button>
+        <button data-filter="submitted" aria-pressed="false">Submitted</button>
+        <button data-filter="preparation" aria-pressed="false">In preparation</button>
+      </div>
     </div>
     <article class="paper" data-status="published">
       <p class="paper-status">Published - 2026</p>
@@ -95,6 +135,7 @@
   year = {2026},
   doi = {10.1016/j.camwa.2025.11.008}
 }</pre>
+      <button class="copy-citation" id="copy-citation">Copy BibTeX</button><span id="copy-status" role="status" aria-live="polite"></span>
       </details>
     </article>
     <article class="paper" data-status="submitted">
@@ -125,9 +166,50 @@
     <h2 id="contact-heading">Contact</h2>
     <p><a href="mailto:sl22b@fsu.edu">sl22b@fsu.edu</a></p>
     <p>Department of Mathematics<br>Florida State University<br>Tallahassee, Florida, USA</p>
+    <p class="small"><a href="https://www.math.fsu.edu/~lee/projects.html" target="_blank" rel="noopener">FSU research group</a> · <a href="https://www.math.fsu.edu/" target="_blank" rel="noopener">Department of Mathematics</a></p>
   </section>
 </main>
+<div class="wrap"><footer><span>&copy; 2026 Seungmin Lee · Updated October 19, 2026</span><a href="#home">Back to top</a></footer></div>
+<script>
+  // Mobile navigation.
+  const toggle = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('#navigation');
+  toggle.addEventListener('click', () => {
+    const open = navigation.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    toggle.textContent = open ? 'Close' : 'Menu';
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open menu');
+    toggle.textContent = 'Menu';
+  }));
+  // Publication filters. All papers remain readable with JavaScript disabled.
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    document.querySelectorAll('.paper').forEach(paper => {
+      paper.hidden = button.dataset.filter !== 'all' && paper.dataset.status !== button.dataset.filter;
+    });
+  }));
+  // Clipboard copy includes a manual fallback for local files or unsupported browsers.
+  document.querySelector('#copy-citation').addEventListener('click', async () => {
+    const citation = document.querySelector('#citation');
+    const status = document.querySelector('#copy-status');
+    try {
+      await navigator.clipboard.writeText(citation.textContent);
+      status.textContent = ' Copied.';
+    } catch {
+      const range = document.createRange();
+      range.selectNodeContents(citation);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      status.textContent = ' Citation selected. Press Ctrl+C (or Command+C) to copy.';
+    }
+  });
+</script>
 </body>
 </html>
-
 
