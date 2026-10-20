@@ -61,6 +61,8 @@
       .paper { break-inside:avoid; }
       a { color:black; }
     }
+      .research-figure { margin: 0 0 22px; }
+    .research-figure img { display: block; width: 100%; height: auto; }
   </style>
 </head>
 <body>
@@ -78,6 +80,11 @@
   <!-- RESEARCH: descriptions summarize the work listed in the CV. -->
   <section class="content-section" id="research" aria-labelledby="research-heading">
     <h2 id="research-heading">Research interests</h2>
+    <figure class="research-figure">
+      <a href="assets/research-interests-cda.webp" target="_blank" rel="noopener" aria-label="Open the research interests figure at full size">
+        <img src="assets/research-interests-cda.webp" width="1536" height="1024" alt="Research interests: physics-preserving methods; porous media and coupled systems; and data assimilation, including continuous data assimilation." decoding="async">
+      </a>
+    </figure>
     <ul class="research-list">
       <li><strong>Property-preserving numerical methods.</strong> Optimization-based cell-average limiters and discontinuous Galerkin methods for two-phase flow on non-matching meshes; metric projection formulations and convergence analysis for convection-diffusion equations.</li>
       <li><strong>Porous media flow and poromechanics.</strong> Finite element methods for Biot's poroelasticity and two-phase flow in heterogeneous porous media.</li>
@@ -154,5 +161,6 @@
 </script>
 </body>
 </html>
+
 
 
