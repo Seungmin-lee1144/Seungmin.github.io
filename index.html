@@ -29,7 +29,7 @@
     .research-list li { margin:10px 0; }
     .research-list strong { font-weight:600; }
     .research-comparison { margin:14px 0 20px; }
-    .research-comparison img { display:block; width:100%; height:auto; }
+    .research-comparison video { display:block; width:100%; height:auto; }
     .research-comparison figcaption { margin-top:6px; color:var(--muted); font-size:14px; }
     .section-heading { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:18px; flex-wrap:wrap; }
     .section-heading h2 { margin:0; }
@@ -91,10 +91,11 @@
     <ul class="research-list">
       <li id="physics-preserving-methods"><strong>Property-preserving numerical methods.</strong> Optimization-based cell-average limiters and discontinuous Galerkin methods for two-phase flow on non-matching meshes; metric projection formulations and convergence analysis for convection-diffusion equations.
         <figure class="research-comparison">
-          <a href="assets/saturation-compare.png" target="_blank" rel="noopener" aria-label="Open the saturation comparison at full size">
-            <img src="assets/saturation-compare.png" width="1000" height="459" alt="Initial saturation at time zero, without a limiter on the left and with a limiter on the right." loading="lazy" decoding="async">
-          </a>
-          <figcaption>Saturation without a limiter (left) and with a limiter (right).</figcaption>
+          <video width="1000" height="459" autoplay muted loop playsinline controls preload="metadata" poster="assets/saturation-compare.png" aria-label="Saturation comparison animation" aria-describedby="saturation-comparison-caption">
+            <source src="assets/saturation-compare.mp4" type="video/mp4">
+            <a href="assets/saturation-compare.mp4">Watch the saturation comparison video.</a>
+          </video>
+          <figcaption id="saturation-comparison-caption">Saturation without a limiter (left) and with a limiter (right).</figcaption>
         </figure>
       </li>
       <li><strong>Porous media flow and poromechanics.</strong> Finite element methods for Biot's poroelasticity and two-phase flow in heterogeneous porous media.</li>
@@ -150,7 +151,7 @@
     <p class="small"><a href="https://www.math.fsu.edu/~lee/projects.html" target="_blank" rel="noopener">FSU research group</a> · <a href="https://www.math.fsu.edu/" target="_blank" rel="noopener">Department of Mathematics</a></p>
   </section>
 </main>
-<div class="wrap"><footer><span>&copy; 2026 Seungmin Lee · Updated October 22, 2026</span><a href="#home">Back to top</a></footer></div>
+<div class="wrap"><footer><span>&copy; 2026 Seungmin Lee · Updated October 26, 2026</span><a href="#home">Back to top</a></footer></div>
 <script>
   // Clipboard copy includes a manual fallback for local files or unsupported browsers.
   document.querySelector('#copy-citation').addEventListener('click', async () => {
